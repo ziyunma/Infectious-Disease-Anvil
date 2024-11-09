@@ -1,5 +1,6 @@
 from ._anvil_designer import Form1Template
 from anvil import *
+import anvil.server
 
 
 class Form1(Form1Template):
@@ -16,7 +17,14 @@ class Form1(Form1Template):
     output_file = self.text_box_3.text
     low_confidence_score = self.text_box_4.text
     xmed_confidence_score = self.text_box_5.text
-    Notification('hey').show()
+
+    anvil.server.call('standardize',
+                      input_file,
+                      sheetname,
+                      output_file,
+                      low_confidence_score,
+                      xmed_confidence_score
+                     )
     
 
   def text_box_1_pressed_enter(self, **event_args):

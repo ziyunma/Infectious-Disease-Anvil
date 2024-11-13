@@ -49,6 +49,11 @@ components:
     name: text_box_5
     properties: {}
     type: TextBox
+  - event_bindings: {click: download_link_click}
+    layout_properties: {grid_position: 'OIKINI,DVZOWV'}
+    name: download_link
+    properties: {}
+    type: Link
   - event_bindings: {click: outlined_button_1_click}
     layout_properties: {grid_position: 'LVNAER,OFMBKS'}
     name: outlined_button_1

@@ -26,18 +26,20 @@ class Form1(Form1Template):
           xmed_confidence_score
       )
       # Handle the returned output file (provide it for download)
-      self.download_link.visible = True
-      self.download_link.file = output_file
+      
     except Exception as e:
       # Handle errors
       return("error", e)
-    
 
-  def text_box_1_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    pass
+    self.download_link.visible = True
+    self.download_link.text = "Download output file"
+    self.download_link.file = output_file
 
   def file_loader_1_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
     if file:
       self.text_box_1.text = file.name
+
+  def download_link_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    pass
